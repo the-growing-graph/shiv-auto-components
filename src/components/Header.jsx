@@ -12,7 +12,6 @@ const NAV = [
     label: "Capabilities",
     submenu: [
       { to: "/capabilities", label: "Overview" },
-      { to: "/infrastructure", label: "Infrastructure" },
       { to: "/quality", label: "Quality" },
       { to: "/industries", label: "Industries" },
     ],
