@@ -3,15 +3,21 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 
 const IMAGES = [
-  { id: 1, title: "Manufacturing Shop Floor", image_url: "/office_image_1.jpg" },
-  { id: 2, title: "Heavy Duty Machinery", image_url: "/office_image_2.jpg" },
-  { id: 3, title: "Automated Press Operations", image_url: "/office_image_3.jpg" },
-  { id: 4, title: "CNC Machining Center", image_url: "/office_image_4.jpg" },
-  { id: 5, title: "Precision Machined Parts", image_url: "/office_image_5.jpeg" },
-  { id: 6, title: "Quality Control & Metrology", image_url: "/office_image_6.png" },
-  { id: 7, title: "Engineering & Tool Design", image_url: "/office_image_7.jpeg" },
-  { id: 8, title: "Tool Room Facility", image_url: "/office_image_8.jpeg" },
-  { id: 9, title: "Storage & Warehouse", image_url: "/office_image_9.png" },
+  { id: 1, title: "Image 1", image_url: "/office_image_1.jpg" },
+  { id: 2, title: "Image 2", image_url: "/office_image_2.jpg" },
+  { id: 3, title: "Image 3", image_url: "/office_image_3.jpg" },
+  { id: 4, title: "Entrance Image", image_url: "/office_image_4.jpg" },
+  { id: 5, title: "Production Floor", image_url: "/office_image_5.jpeg" },
+  { id: 6, title: "Worker using lifting machine", image_url: "/office_image_6.png" },
+  { id: 7, title: "Reception area", image_url: "/office_image_7.jpeg" },
+  { id: 8, title: "Women using machine", image_url: "/office_image_8.jpeg" },
+  { id: 9, title: "Women handling products", image_url: "/office_image_9.png" },
+  { id: 10, title: "Production floor", image_url: "/office_image_10.jpeg" },
+  { id: 11, title: "Corridor Image", image_url: "/office_image_11.jpeg" },
+  { id: 12, title: "Meeting area", image_url: "/office_image_12.jpeg" },
+  { id: 13, title: "Entrance Image", image_url: "/office_image_13.jpeg" },
+  { id: 14, title: "Outside Image", image_url: "/office_image_14.jpeg" },
+  { id: 15, title: "Inventory Image", image_url: "/office_image_15.jpeg" },
 ];
 
 export default function Gallery() {
@@ -37,18 +43,28 @@ export default function Gallery() {
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {IMAGES.map((g) => (
-              <motion.button
+             {IMAGES.map((g) => (
+              <motion.div
                 key={g.id}
-                data-testid={`gallery-item-${g.id}`}
-                onClick={() => setLightbox(g)}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="w-full aspect-[4/3] overflow-hidden bg-gray-50 border border-gray-100 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 group hover:-translate-y-1"
+                className="w-full bg-white border border-gray-100 rounded-3xl shadow-xl transition-all duration-300 group hover:-translate-y-1 overflow-hidden"
               >
-                <img src={g.image_url} alt="" loading="lazy" className="w-full h-full object-cover group-hover:scale-105 duration-500 transition-transform" />
-              </motion.button>
+                <button
+                  data-testid={`gallery-item-${g.id}`}
+                  onClick={() => setLightbox(g)}
+                  className="relative w-full aspect-[4/3] overflow-hidden bg-gray-50 block"
+                >
+                  <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/95 backdrop-blur-sm border border-gray-200/50 flex items-center justify-center shadow-sm z-10">
+                    <img src="/logo.png" alt="SAC Logo" className="w-16 object-contain" />
+                  </div>
+                  <img src={g.image_url} alt={g.title} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 duration-500 transition-transform" />
+                </button>
+                <div className="p-5 text-left">
+                  <h3 className="font-display font-bold text-lg text-[#0F2B46] mb-1">{g.title}</h3>
+                </div>
+              </motion.div>
             ))}
           </div>
         </div>
