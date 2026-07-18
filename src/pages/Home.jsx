@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
@@ -8,7 +8,6 @@ import {
 import { Button } from "@/components/ui/button";
 import { AnimatedNumber, SectionHeader, Reveal } from "@/components/Primitives";
 import { QuoteDialog } from "@/components/forms/QuoteDialog";
-import { api } from "@/lib/api";
 
 const CAPABILITIES = [
   { icon: Cpu, title: "CNC Machining", desc: "Turning, milling & 5-axis for ±0.01mm tolerance parts." },
@@ -48,10 +47,6 @@ const INDUSTRIES = [
 export default function Home() {
   const [stats, setStats] = useState({ years_experience: 25, monthly_capacity_tons: 500, machines: 60, workforce: 220, certifications: 6 });
   const [quoteOpen, setQuoteOpen] = useState(false);
-
-  useEffect(() => {
-    api.get("/stats").then((r) => setStats(r.data)).catch(() => {});
-  }, []);
 
   return (
     <div data-testid="home-page">

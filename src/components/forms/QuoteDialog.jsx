@@ -8,8 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { toast } from "sonner";
-import { api, formatApiError } from "@/lib/api";
-import { UploadCloud, Loader2 } from "lucide-react";
+import { UploadCloud } from "lucide-react";
 
 const EMPTY = {
   name: "", company: "", designation: "", email: "", phone: "", country: "India",
@@ -19,33 +18,27 @@ const EMPTY = {
 export function QuoteDialog({ open, onOpenChange }) {
   const [form, setForm] = useState(EMPTY);
   const [file, setFile] = useState(null);
-  const [busy, setBusy] = useState(false);
 
   const update = (k) => (e) => setForm({ ...form, [k]: e?.target ? e.target.value : e });
 
-  const submit = async (e) => {
+  const submit = (e) => {
     e.preventDefault();
     if (!form.consent) {
       toast.error("Please accept the consent to proceed.");
       return;
     }
-    setBusy(true);
-    try {
-      const fd = new FormData();
-      Object.entries(form).forEach(([k, v]) => fd.append(k, v ?? ""));
-      if (file) fd.append("attachment", file);
-      const { data } = await api.post("/submissions/quote", fd, {
-        headers: { "Content-Type": "multipart/form-data" },
-      });
-      toast.success(data.message || "Quote request received!");
-      setForm(EMPTY);
-      setFile(null);
-      onOpenChange(false);
-    } catch (err) {
-      toast.error(formatApiError(err));
-    } finally {
-      setBusy(false);
-    }
+    const phoneNumber = "919915417572";
+    const text = `Hello Shiv Auto Components, I would like to request a quote:
+- *Name*: ${form.name}
+- *Email*: ${form.email}
+- *Phone*: ${form.phone}
+- *Message*: ${form.message || 'N/A'}`;
+    const encodedText = encodeURIComponent(text);
+    window.open(`https://wa.me/${phoneNumber}?text=${encodedText}`, "_blank");
+    toast.success("Redirecting to WhatsApp to send request...");
+    setForm(EMPTY);
+    setFile(null);
+    onOpenChange(false);
   };
 
   return (
@@ -85,9 +78,9 @@ export function QuoteDialog({ open, onOpenChange }) {
           </div>
           <div className="sm:col-span-2 flex justify-end gap-2">
             <Button type="button" variant="outline" onClick={() => onOpenChange(false)} className="rounded-sm">Cancel</Button>
-            <Button data-testid="quote-submit" type="submit" disabled={busy}
+            <Button data-testid="quote-submit" type="submit"
               className="bg-[#2563EB] hover:bg-[#1d4ed8] text-white rounded-sm">
-              {busy ? <><Loader2 className="w-4 h-4 mr-2 animate-spin" /> Submitting</> : "Send Request"}
+              Send Request
             </Button>
           </div>
         </form>

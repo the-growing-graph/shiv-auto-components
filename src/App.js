@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { Toaster } from "@/components/ui/sonner";
-import { AuthProvider } from "@/lib/auth";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -14,11 +13,7 @@ import Machinery from "@/pages/Machinery";
 import Quality from "@/pages/Quality";
 import Industries from "@/pages/Industries";
 import Gallery from "@/pages/Gallery";
-import Careers from "@/pages/Careers";
 import Contact from "@/pages/Contact";
-
-import AdminLogin from "@/pages/admin/Login";
-import AdminDashboard from "@/pages/admin/Dashboard";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -41,34 +36,29 @@ function PublicLayout({ children }) {
 export default function App() {
   return (
     <BrowserRouter>
-      <AuthProvider>
-        <ScrollToTop />
-        <Toaster position="top-center" richColors />
-        <Routes>
-          <Route path="/admin/login" element={<AdminLogin />} />
-          <Route path="/admin/*" element={<AdminDashboard />} />
-          <Route
-            path="*"
-            element={
-              <PublicLayout>
-                <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/about" element={<About />} />
-                  <Route path="/capabilities" element={<Capabilities />} />
-                  <Route path="/infrastructure" element={<Infrastructure />} />
-                  <Route path="/machinery" element={<Machinery />} />
-                  <Route path="/quality" element={<Quality />} />
-                  <Route path="/industries" element={<Industries />} />
-                  <Route path="/gallery" element={<Gallery />} />
-                  <Route path="/careers" element={<Careers />} />
-                  <Route path="/contact" element={<Contact />} />
-                  <Route path="*" element={<Home />} />
-                </Routes>
-              </PublicLayout>
-            }
-          />
-        </Routes>
-      </AuthProvider>
+      <ScrollToTop />
+      <Toaster position="top-center" richColors />
+      <Routes>
+        <Route
+          path="*"
+          element={
+            <PublicLayout>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/capabilities" element={<Capabilities />} />
+                <Route path="/infrastructure" element={<Infrastructure />} />
+                <Route path="/machinery" element={<Machinery />} />
+                <Route path="/quality" element={<Quality />} />
+                <Route path="/industries" element={<Industries />} />
+                <Route path="/gallery" element={<Gallery />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="*" element={<Home />} />
+              </Routes>
+            </PublicLayout>
+          }
+        />
+      </Routes>
     </BrowserRouter>
   );
 }

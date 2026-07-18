@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { MapPin, Phone, Mail, ArrowRight, Cog } from "lucide-react";
+import { MapPin, Phone, Mail } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -22,7 +22,21 @@ export default function Footer() {
               Contract manufacturing partner for Automotive OEMs, Tier-1 suppliers and industrial buyers.
               ISO 9001:2015 &amp; IATF 16949 certified operations.
             </p>
-            <div className="mt-6 space-y-2 text-sm text-white/80">
+          </div>
+
+          <div className="lg:col-span-4">
+            <div className="font-eyebrow text-white/60 mb-4">Company</div>
+            <ul className="space-y-2 text-sm text-white/80">
+              <li><Link to="/about" className="hover:text-white">About Us</Link></li>
+              <li><Link to="/capabilities" className="hover:text-white">Capabilities</Link></li>
+              <li><Link to="/infrastructure" className="hover:text-white">Infrastructure</Link></li>
+              <li><Link to="/quality" className="hover:text-white">Quality Assurance</Link></li>
+            </ul>
+          </div>
+
+          <div className="lg:col-span-3">
+            <div className="font-eyebrow text-white/60 mb-4">Get in touch</div>
+            <div className="space-y-2 text-sm text-white/80">
               <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 mt-0.5 text-[#2563EB]" />
                 <span>Sector 58, Faridabad - 121004 (Haryana)</span>
@@ -36,31 +50,6 @@ export default function Footer() {
                 <a href="mailto:manishshivauto@gmail.com" className="hover:text-white">manishshivauto@gmail.com</a>
               </div>
             </div>
-          </div>
-
-          <div className="lg:col-span-3">
-            <div className="font-eyebrow text-white/60 mb-4">Company</div>
-            <ul className="space-y-2 text-sm text-white/80">
-              <li><Link to="/about" className="hover:text-white">About Us</Link></li>
-              <li><Link to="/capabilities" className="hover:text-white">Capabilities</Link></li>
-              <li><Link to="/infrastructure" className="hover:text-white">Infrastructure</Link></li>
-              <li><Link to="/quality" className="hover:text-white">Quality Assurance</Link></li>
-              <li><Link to="/careers" className="hover:text-white">Careers</Link></li>
-            </ul>
-          </div>
-
-          <div className="lg:col-span-4">
-            <div className="font-eyebrow text-white/60 mb-4">Talk to procurement</div>
-            <p className="text-sm text-white/70 mb-4 leading-relaxed">
-              Send us drawings and volumes. Quotes typically within 24-48 hours.
-            </p>
-            <Link
-              to="/contact"
-              data-testid="footer-cta"
-              className="inline-flex items-center gap-2 bg-[#2563EB] hover:bg-[#1d4ed8] text-white px-5 py-3 rounded-sm text-sm font-medium transition-colors"
-            >
-              Start a conversation <ArrowRight className="w-4 h-4" />
-            </Link>
           </div>
         </div>
 

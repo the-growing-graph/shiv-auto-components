@@ -3,6 +3,7 @@
 // the recipe to add a new feature file.
 //
 // Directive:
+
 //   - Keys are camelCase, values are kebab-case shaped as `<feature>-<element>`
 //     (or `<feature>-<element>-<qualifier>` when an element repeats). Examples:
 //     'login-submit-button', 'cart-quantity-input', 'product-card-image'.

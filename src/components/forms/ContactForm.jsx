@@ -4,10 +4,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
-import { api, formatApiError } from "@/lib/api";
-import { Loader2 } from "lucide-react";
 
-// Simple inquiry form for the Contact page — reuses the "quote" endpoint
+// Simple inquiry form for the Contact page — redirects to WhatsApp
 const EMPTY = {
   name: "", company: "", designation: "", email: "", phone: "", country: "India",
   product_requirement: "General Inquiry", estimated_quantity: "", message: "", consent: true, website: "",
@@ -15,24 +13,22 @@ const EMPTY = {
 
 export function ContactForm() {
   const [form, setForm] = useState(EMPTY);
-  const [busy, setBusy] = useState(false);
 
   const update = (k) => (e) => setForm({ ...form, [k]: e?.target ? e.target.value : e });
 
-  const submit = async (e) => {
+  const submit = (e) => {
     e.preventDefault();
-    setBusy(true);
-    try {
-      const fd = new FormData();
-      Object.entries(form).forEach(([k, v]) => fd.append(k, v ?? ""));
-      const { data } = await api.post("/submissions/quote", fd);
-      toast.success(data.message || "Message received. We'll get back to you.");
-      setForm(EMPTY);
-    } catch (err) {
-      toast.error(formatApiError(err));
-    } finally {
-      setBusy(false);
-    }
+    const phoneNumber = "919915417572";
+    const text = `Hello Shiv Auto Components, I have an inquiry:
+- *Name*: ${form.name}
+- *Email*: ${form.email}
+- *Phone*: ${form.phone}
+- *Subject/Requirement*: ${form.product_requirement}
+- *Message*: ${form.message || 'N/A'}`;
+    const encodedText = encodeURIComponent(text);
+    window.open(`https://wa.me/${phoneNumber}?text=${encodedText}`, "_blank");
+    toast.success("Redirecting to WhatsApp to send message...");
+    setForm(EMPTY);
   };
 
   return (
@@ -60,9 +56,9 @@ export function ContactForm() {
         <Textarea rows={4} value={form.message} onChange={update("message")} />
       </div>
       <div className="sm:col-span-2">
-        <Button data-testid="contact-submit" type="submit" disabled={busy}
+        <Button data-testid="contact-submit" type="submit"
           className="bg-[#2563EB] hover:bg-[#1d4ed8] text-white rounded-sm w-full sm:w-auto">
-          {busy ? <><Loader2 className="w-4 h-4 mr-2 animate-spin" /> Sending</> : "Send Message"}
+          Send Message
         </Button>
       </div>
     </form>
