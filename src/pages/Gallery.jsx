@@ -3,21 +3,21 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 
 const IMAGES = [
-  { id: 1, title: "Image 1", image_url: "/office_image_1.jpg" },
-  { id: 2, title: "Image 2", image_url: "/office_image_2.jpg" },
-  { id: 3, title: "Image 3", image_url: "/office_image_3.jpg" },
-  { id: 4, title: "Entrance Image", image_url: "/office_image_4.jpg" },
-  { id: 5, title: "Production Floor", image_url: "/office_image_5.jpeg" },
-  { id: 6, title: "Worker using lifting machine", image_url: "/office_image_6.png" },
-  { id: 7, title: "Reception area", image_url: "/office_image_7.jpeg" },
-  { id: 8, title: "Women using machine", image_url: "/office_image_8.jpeg" },
-  { id: 9, title: "Women handling products", image_url: "/office_image_9.png" },
-  { id: 10, title: "Production floor", image_url: "/office_image_10.jpeg" },
-  { id: 11, title: "Corridor Image", image_url: "/office_image_11.jpeg" },
-  { id: 12, title: "Meeting area", image_url: "/office_image_12.jpeg" },
-  { id: 13, title: "Entrance Image", image_url: "/office_image_13.jpeg" },
-  { id: 14, title: "Outside Image", image_url: "/office_image_14.jpeg" },
-  { id: 15, title: "Inventory Image", image_url: "/office_image_15.jpeg" },
+  { id: 1, title: "Quality Room", image_url: "/office_image_1.png" },
+  { id: 2, title: "Quality Assurance Room", image_url: "/office_image_2.png" },
+  { id: 3, title: "Dojo Room", image_url: "/office_image_3.png" },
+  { id: 4, title: "Office Entrance", image_url: "/office_image_4.png" },
+  { id: 5, title: "Production Floor", image_url: "/office_image_5.png" },
+  { id: 6, title: "Forklifter Machine", image_url: "/office_image_6.png" },
+  { id: 7, title: "Office Entrance 2", image_url: "/office_image_7.png" },
+  { id: 8, title: "Hydraulic Press Machine Operation", image_url: "/office_image_8.png" },
+  { id: 9, title: "Power Press Production Line", image_url: "/office_image_9.png" },
+  { id: 10, title: "Production floor", image_url: "/office_image_10.png" },
+  { id: 11, title: "Corridor Image", image_url: "/office_image_11.png" },
+  { id: 12, title: "Accountant area", image_url: "/office_image_12.png" },
+  { id: 13, title: "Entrance Image", image_url: "/office_image_13.png" },
+  { id: 14, title: "Outside Image", image_url: "/office_image_14.png" },
+  { id: 15, title: "Store Room", image_url: "/office_image_15.png" },
 ];
 
 export default function Gallery() {
