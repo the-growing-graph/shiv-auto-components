@@ -19,8 +19,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-white/70 text-sm mt-5 max-w-md leading-relaxed">
-              Contract manufacturing partner for Automotive OEMs, Tier-1 suppliers and industrial buyers.
-              ISO 9001:2015 &amp; IATF 16949 certified operations.
+              Shiv Auto Components is a trusted name in the field of precision manufacturing. We specialize in the manufacturing and supply of high-quality auto components that power performance and ensure reliability.
             </p>
           </div>
 
@@ -28,9 +27,8 @@ export default function Footer() {
             <div className="font-eyebrow text-white/60 mb-4">Company</div>
             <ul className="space-y-2 text-sm text-white/80">
               <li><Link to="/about" className="hover:text-white">About Us</Link></li>
-              <li><Link to="/capabilities" className="hover:text-white">Capabilities</Link></li>
-              <li><Link to="/infrastructure" className="hover:text-white">Infrastructure</Link></li>
-              <li><Link to="/quality" className="hover:text-white">Quality Assurance</Link></li>
+              <li><Link to="/machinery" className="hover:text-white">Machinery</Link></li>
+              <li><Link to="/gallery" className="hover:text-white">Gallery</Link></li>
             </ul>
           </div>
 

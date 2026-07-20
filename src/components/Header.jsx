@@ -8,14 +8,7 @@ import { VisitDialog } from "@/components/forms/VisitDialog";
 const NAV = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
-  {
-    label: "Capabilities",
-    submenu: [
-      { to: "/capabilities", label: "Overview" },
-      { to: "/quality", label: "Quality" },
-      { to: "/industries", label: "Industries" },
-    ],
-  },
+  { to: "/machinery", label: "Machinery" },
   { to: "/gallery", label: "Gallery" },
   { to: "/contact", label: "Contact" },
 ];

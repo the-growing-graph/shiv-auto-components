@@ -11,9 +11,9 @@ import Capabilities from "@/pages/Capabilities";
 import Infrastructure from "@/pages/Infrastructure";
 import Machinery from "@/pages/Machinery";
 import Quality from "@/pages/Quality";
-import Industries from "@/pages/Industries";
 import Gallery from "@/pages/Gallery";
 import Contact from "@/pages/Contact";
+import Products from "@/pages/Products";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -50,8 +50,8 @@ export default function App() {
                 <Route path="/infrastructure" element={<Infrastructure />} />
                 <Route path="/machinery" element={<Machinery />} />
                 <Route path="/quality" element={<Quality />} />
-                <Route path="/industries" element={<Industries />} />
                 <Route path="/gallery" element={<Gallery />} />
+                <Route path="/products" element={<Products />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="*" element={<Home />} />
               </Routes>

@@ -69,10 +69,17 @@ export default function About() {
                 We are proud to be a certified Tier-2 approved vendor for Maruti Suzuki India Limited. This validation reflects our adherence to stringent quality management, robust manufacturing standards, and consistent delivery performances required by the nation's leading automotive brand.
               </p>
             </div>
-            <div className="flex flex-col items-center justify-center bg-white text-[#0F2B46] px-8 py-6 rounded-2xl border-2 border-blue-500 shadow-md min-w-[240px] shrink-0 text-center">
-              <img src="/Maruti_Suzuki.jpg" alt="Maruti Suzuki" className="h-16 w-auto object-contain mb-3" />
-              <div className="font-bold text-lg leading-tight">Maruti Suzuki</div>
-              <div className="text-sm font-semibold text-[#B91C1C] uppercase tracking-wider mt-1">2-Tier Approved Vendor</div>
+            <div className="flex flex-col sm:flex-row items-center gap-6 bg-white text-[#0F2B46] px-8 py-6 rounded-2xl border-2 border-blue-500 shadow-md shrink-0">
+              <img src="/Maruti_Suzuki.jpg" alt="Maruti Suzuki" className="h-12 w-auto object-contain" />
+              <div className="hidden sm:block h-12 w-px bg-gray-300" />
+              <div className="flex items-center gap-3">
+                <img src="/verification_badge.png" alt="Verification Badge" className="h-14 w-auto object-contain" />
+                <div className="text-left leading-tight">
+                  <div className="text-[11px] font-bold text-[#0F2B46] uppercase tracking-wider">Maruti Suzuki</div>
+                  <div className="font-display font-black text-[#0F2B46] text-xl leading-none">2 Tier</div>
+                  <div className="text-[10px] font-bold text-[#0F2B46] uppercase tracking-wider">Approved Vendor</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -19,6 +19,10 @@ const FAQS = [
   {
     q: "How can we request a quote for our custom parts?",
     a: "You can click the 'Request Quote' button in the header or submit an inquiry using our contact form. Share your engineering drawings, material requirements, and estimated quantities, and we will get back to you with a quote."
+  },
+  {
+    q: "Can we purchase the products shown on the website directly?",
+    a: "No, the products showcased on our website are strictly for demonstrating our manufacturing, press, and stamping capabilities. We operate on a contract manufacturing model, producing components custom-built to our clients' specific engineering designs and drawing inputs."
   }
 ];
 
