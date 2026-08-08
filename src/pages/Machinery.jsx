@@ -115,17 +115,7 @@ const MACHINES = [
   },
   {
     id: 7,
-    name: "Heavy-Duty Warehouse Forklift (Unit 7)",
-    image: "/machines/fork_lifter_machine.jpg",
-    points: [
-      "Efficiently handles heavy materials with ease.",
-      "Improves workflow with reliable lifting performance.",
-      "Ensures smooth transportation of heavy loads.",
-    ],
-  },
-  {
-    id: 8,
-    name: "Precision Surface Grinder (Unit 8)",
+    name: "Precision Surface Grinder (Unit 7)",
     image: "/machines/surface_grinder.png",
     points: [
       "High-precision surface grinding for in-house tool & die maintenance.",
@@ -133,8 +123,8 @@ const MACHINES = [
     ],
   },
   {
-    id: 9,
-    name: "Industrial Bench Grinder (Unit 9)",
+    id: 8,
+    name: "Industrial Bench Grinder (Unit 8)",
     image: "/machines/bench_grinder.png",
     points: [
       "Heavy-duty bench grinder for rapid tool deburring and component finishing.",
@@ -142,8 +132,8 @@ const MACHINES = [
     ],
   },
   {
-    id: 10,
-    name: "Precision Lathe Machine (Unit 10)",
+    id: 9,
+    name: "Precision Lathe Machine (Unit 9)",
     image: "/machines/lathe_machine.png",
     points: [
       "Versatile lathe machine for custom pin, die, and fixture component turning.",
@@ -151,8 +141,8 @@ const MACHINES = [
     ],
   },
   {
-    id: 11,
-    name: "Heavy-Duty Drilling Machine (Unit 11)",
+    id: 10,
+    name: "Heavy-Duty Drilling Machine (Unit 10)",
     image: "/machines/drilling_machine.png",
     points: [
       "Precision vertical drilling machine for accurate hole placement and reaming.",
@@ -217,31 +207,28 @@ export default function Machinery() {
           <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 items-stretch">
             {MACHINES.map((m, idx) => (
               <Reveal key={m.id} delay={idx * 0.05}>
-                <div className="bg-white border-2 border-gray-300 hover:border-[#2563EB] rounded-3xl p-5 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between h-full group">
-                  <div>
-                    {/* Machine Image Container (Vertical 3:4 Portrait Ratio) */}
-                    <div className="w-full aspect-[3/4] rounded-2xl overflow-hidden bg-gray-100 border border-gray-200 relative group-hover:border-blue-300 transition-colors">
-                      <span className="absolute top-3 left-3 bg-[#0F2B46] text-white text-[11px] font-bold px-2.5 py-1 rounded-full z-10 shadow-sm">
-                        Unit {m.id}
-                      </span>
-                      <img
-                        src={m.image}
-                        alt={m.name}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                    </div>
+                <div className="bg-white border-2 border-gray-300 hover:border-[#2563EB] rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full group overflow-hidden">
+                  {/* Machine Image — Full card width, 4:3 ratio, no side padding */}
+                  <div className="w-full aspect-[4/3] relative overflow-hidden bg-gray-100">
+                    <span className="absolute top-3 left-3 bg-[#0F2B46] text-white text-[11px] font-bold px-2.5 py-1 rounded-full z-10 shadow-sm">
+                      Unit {m.id}
+                    </span>
+                    <img
+                      src={m.image}
+                      alt={m.name}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
 
-                    {/* Machine Title (Middle) */}
-                    <div className="mt-4">
-                      <div className="text-[10px] font-bold uppercase tracking-wider text-[#2563EB] mb-1">
-                        Asset No. {m.id}
-                      </div>
-                      <h3 className="font-display font-bold text-base sm:text-lg text-[#0F2B46] leading-snug group-hover:text-[#2563EB] transition-colors">
-                        {m.name}
-                      </h3>
+                  {/* Content below image with padding */}
+                  <div className="p-5 flex flex-col flex-1">
+                    <div className="text-[10px] font-bold uppercase tracking-wider text-[#2563EB] mb-1">
+                      Asset No. {m.id}
                     </div>
+                    <h3 className="font-display font-bold text-base sm:text-lg text-[#0F2B46] leading-snug group-hover:text-[#2563EB] transition-colors">
+                      {m.name}
+                    </h3>
 
-                    {/* Exactly 2 Points (Bottom) */}
                     <ul className="mt-3 space-y-2 text-xs text-gray-600">
                       {m.points.slice(0, 2).map((point, pIdx) => (
                         <li key={pIdx} className="flex items-start gap-2 leading-relaxed">

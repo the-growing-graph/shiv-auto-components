@@ -92,8 +92,8 @@ export default function Footer() {
                   <div className="p-2 rounded-lg bg-red-500/20 text-[#B91C1C] shrink-0">
                     <Mail className="w-4 h-4" />
                   </div>
-                  <a href="mailto:manishshivauto@gmail.com" className="hover:text-white transition-colors text-xs sm:text-sm font-medium">
-                    manishshivauto@gmail.com
+                  <a href="mailto:info@shivautocomponents.com" className="hover:text-white transition-colors text-xs sm:text-sm font-medium">
+                    info@shivautocomponents.com
                   </a>
                 </div>
               </div>

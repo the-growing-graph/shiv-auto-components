@@ -151,8 +151,8 @@ export default function Contact() {
                       </div>
                       <div>
                         <div className="text-xs text-white/50 font-bold uppercase tracking-wider mb-0.5">Email Address</div>
-                        <a href="mailto:manishshivauto@gmail.com" className="font-semibold text-white hover:text-[#60A5FA] transition-colors">
-                          manishshivauto@gmail.com
+                        <a href="mailto:info@shivautocomponents.com" className="font-semibold text-[#B91C1C] hover:text-[#2563EB] transition-colors">
+                          info@shivautocomponents.com
                         </a>
                       </div>
                     </div>

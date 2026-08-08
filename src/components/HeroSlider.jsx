@@ -61,13 +61,13 @@ export default function HeroSlider({ slides, interval = 6000, className = "", ex
               className="max-w-4xl"
             >
               {currentSlide.eyebrow && (
-                <div className="inline-flex items-center gap-1.5 px-3.5 py-1 text-xs font-bold tracking-wider rounded-full bg-blue-500/20 text-[#60A5FA] border border-blue-400/30 mb-4">
+                <div className="font-['Outfit'] inline-flex items-center gap-1.5 px-3.5 py-1 text-xs font-bold tracking-wider rounded-full bg-blue-500/20 text-[#60A5FA] border border-blue-400/30 mb-4">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#60A5FA]" />
                   <span>{currentSlide.eyebrow}</span>
                 </div>
               )}
               {currentSlide.title && (
-                <h1 className="font-display text-3xl sm:text-4xl lg:text-6xl font-bold leading-[1.02] tracking-tight text-white">
+                <h1 className="font-['Outfit'] font-display text-3xl sm:text-4xl lg:text-6xl font-bold leading-[1.02] tracking-tight text-white">
                   {currentSlide.title}
                 </h1>
               )}

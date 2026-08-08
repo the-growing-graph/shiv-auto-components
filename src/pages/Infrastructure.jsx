@@ -389,16 +389,30 @@ export default function Infrastructure() {
                 In-house transportation of materials is managed through an internal logistics system that ensures the timely and efficient movement of raw materials, work-in-progress (WIP), and finished goods between storage areas, production lines, and dispatch locations. This process minimizes handling delays, supports continuous production flow, and helps maintain operational efficiency and inventory control.
               </p>
 
-              {/* Transportation Image Showcase */}
-              <div className="mt-8 aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/9] rounded-2xl overflow-hidden bg-gray-100 border border-gray-200 shadow-sm relative group">
-                <img
-                  src="/infra/in_house_transportation.png"
-                  alt="In House Transportation Vehicle"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0F2B46]/90 via-[#0F2B46]/30 to-transparent" />
-                <div className="absolute bottom-3 left-4 right-4 sm:bottom-4 sm:left-6 sm:right-6 text-white font-bold text-xs sm:text-base md:text-lg leading-snug">
-                  Dedicated Internal Logistics &amp; Transport Vehicle (Shiv Auto Components Fleet)
+              {/* Transportation & Forklift Fleet Showcase */}
+              <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="aspect-[16/10] rounded-2xl overflow-hidden bg-gray-100 border border-gray-200 shadow-sm relative group">
+                  <img
+                    src="/infra/in_house_transportation.png"
+                    alt="In House Transportation Vehicle"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0F2B46]/90 via-[#0F2B46]/30 to-transparent" />
+                  <div className="absolute bottom-3 left-4 right-4 sm:bottom-4 sm:left-5 sm:right-5 text-white font-bold text-xs sm:text-base leading-snug">
+                    Internal Logistics &amp; Goods Transport Fleet
+                  </div>
+                </div>
+
+                <div className="aspect-[16/10] rounded-2xl overflow-hidden bg-gray-100 border border-gray-200 shadow-sm relative group">
+                  <img
+                    src="/machines/fork_lifter_machine.jpg"
+                    alt="Heavy-Duty Material Handling Forklift"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0F2B46]/90 via-[#0F2B46]/30 to-transparent" />
+                  <div className="absolute bottom-3 left-4 right-4 sm:bottom-4 sm:left-5 sm:right-5 text-white font-bold text-xs sm:text-base leading-snug">
+                    Heavy-Duty Warehouse Forklift &amp; Material Handler
+                  </div>
                 </div>
               </div>
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import HeroSlider from "@/components/HeroSlider";
-import { X } from "lucide-react";
+import { X, Youtube, Play } from "lucide-react";
 
 const GALLERY_SLIDES = [
   {
@@ -65,6 +65,46 @@ export default function Gallery() {
           </span>
         </div>
       </div>
+
+      {/* YOUTUBE VIDEO SECTION PLACEHOLDER */}
+      <section className="py-16 bg-[#F8F9FA] border-b border-gray-200/80">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-8 items-stretch">
+            
+            {/* Left Card: Light Red Gradient Text Card */}
+            <div className="bg-gradient-to-b from-red-50/90 via-red-50/30 to-white border-2 border-gray-300 border-l-4 border-l-[#B91C1C] rounded-3xl p-8 lg:p-10 shadow-sm relative overflow-hidden flex flex-col justify-center h-full">
+              <div className="inline-flex items-center gap-1.5 px-3.5 py-1 text-xs font-bold tracking-wider uppercase rounded-full bg-red-100/80 text-[#B91C1C] border border-red-200 mb-4 w-fit">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#B91C1C]" />
+                <span>Factory Tour &amp; Video Walkthrough</span>
+              </div>
+              
+              <h2 className="font-['Outfit'] font-display text-3xl sm:text-4xl font-bold text-[#0F2B46] tracking-tight">
+                Experience Our Production Lines In Action
+              </h2>
+              
+              <p className="mt-4 text-gray-700 text-base leading-relaxed font-normal">
+                Take a virtual walkthrough of <strong className="text-[#0F2B46]">Shiv Auto Components</strong> plant in Sector 58, Faridabad. See our high-capacity pneumatic power presses (80T to 160T), precision metrology lab, internal logistics fleet, and skilled operators working in real-time.
+              </p>
+
+              <p className="mt-3 text-gray-600 text-sm leading-relaxed">
+                Our video showcase highlights our commitment to 100% zero-defect quality, Maruti Suzuki Tier-2 OEM compliance, and advanced manufacturing capabilities.
+              </p>
+            </div>
+
+            {/* Right: Direct Video Container with Equal Height */}
+            <div className="relative rounded-3xl overflow-hidden border-2 border-gray-300 shadow-md bg-black w-full h-full min-h-[300px] flex items-center">
+              <iframe
+                className="w-full h-full rounded-3xl min-h-[300px]"
+                src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ"
+                title="Shiv Auto Components Plant Video Walkthrough"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+
+          </div>
+        </div>
+      </section>
 
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
