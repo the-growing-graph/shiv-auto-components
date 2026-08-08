@@ -1,6 +1,28 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import HeroSlider from "@/components/HeroSlider";
 import { X } from "lucide-react";
+
+const GALLERY_SLIDES = [
+  {
+    image: "/hero_bg_1.png",
+    eyebrow: "Gallery",
+    title: "Step Inside The Factory",
+    description: "Explore our state-of-the-art power press lines, quality inspection room, office facilities, and manufacturing infrastructure."
+  },
+  {
+    image: "/hero_bg_2.png",
+    eyebrow: "Production Facility",
+    title: "Precision Machines & Production Lines",
+    description: "A visual walkthrough of our power presses, heavy forklifts, quality testing equipment, and organized shop floor."
+  },
+  {
+    image: "/hero_bg_3.png",
+    eyebrow: "Workplace Excellence",
+    title: "Dedicated Quality & Dojo Training Setup",
+    description: "High-standard infrastructure built to foster technical expertise, quality assurance, and continuous operational safety."
+  }
+];
 
 const IMAGES = [
   { id: 1, title: "Quality Room", image_url: "/office_image_1.png" },
@@ -31,14 +53,18 @@ export default function Gallery() {
 
   return (
     <div data-testid="gallery-page" className="pb-24">
-      <section className="py-24 lg:py-32 bg-[#0F2B46] text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="font-eyebrow text-[#60A5FA] mb-4">Gallery</div>
-          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold max-w-4xl leading-[1.02] tracking-tight">
-            Step inside the factory.
-          </h1>
+      {/* HERO SLIDER */}
+      <HeroSlider slides={GALLERY_SLIDES} interval={6000} />
+
+      {/* Static Hero Tagline Bar */}
+      <div className="bg-[#0F2B46] text-white py-3 px-4 border-y border-[#1E3A5F] relative z-20 select-none">
+        <div className="max-w-7xl mx-auto flex items-center justify-center text-center gap-2.5 font-semibold text-xs sm:text-sm">
+          <span className="w-2 h-2 rounded-full bg-[#B91C1C] shrink-0" />
+          <span className="tracking-wide text-gray-100">
+            Authorized Vendor — Maruti Suzuki Tier-2 Approved Manufacturer
+          </span>
         </div>
-      </section>
+      </div>
 
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

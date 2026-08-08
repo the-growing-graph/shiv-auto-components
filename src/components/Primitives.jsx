@@ -33,11 +33,16 @@ export function AnimatedNumber({ value = 0, duration = 1.6, suffix = "" }) {
 export function SectionHeader({ eyebrow, title, description, align = "left", className = "" }) {
   return (
     <div className={`${align === "center" ? "text-center mx-auto" : "text-left"} max-w-3xl ${className}`}>
-      {eyebrow && <div className="font-eyebrow text-[#2563EB] mb-3">{eyebrow}</div>}
+      {eyebrow && (
+        <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-bold tracking-wider uppercase rounded-full bg-blue-50 text-[#2563EB] border border-blue-200/80 mb-4 shadow-sm">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
+          <span>{eyebrow}</span>
+        </div>
+      )}
       <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0F2B46] tracking-tight leading-[1.05]">
         {title}
       </h2>
-      {description && <p className="mt-5 text-[#6B7280] text-base sm:text-lg leading-relaxed">{description}</p>}
+      {description && <p className="mt-5 text-[#374151] font-medium text-base sm:text-lg leading-relaxed">{description}</p>}
     </div>
   );
 }
