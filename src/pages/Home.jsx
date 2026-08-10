@@ -37,7 +37,7 @@ const HOME_SLIDES = [
     eyebrow: "Maruti Suzuki Tier-2 Approved Vendor",
     title: (
       <>
-        Precision in Every Component, <br className="hidden sm:block" />
+        Welcome to Shiv Auto Components, <br className="hidden sm:block" />
         <span className="text-[#60A5FA]">Excellence in Every Delivery.</span>
       </>
     ),
